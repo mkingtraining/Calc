@@ -1,4 +1,4 @@
-3package com.kavinschool.calc;
+package com.kavinschool.calc;
 
 import static org.junit.Assert.*;
 
