@@ -28,8 +28,15 @@ steps:
     summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/**/site/cobertura/coverage.xml'
     pathToSources: '$(System.DefaultWorkingDirectory)/**/**/src/main/java'
     reportDirectory: '$(System.DefaultWorkingDirectory)/**/**/site/cobertura'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'calc'
     publishLocation: 'Container'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'calcArtfifacts'
+    publishLocation: 'pipeline'
